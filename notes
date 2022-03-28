@@ -13,9 +13,31 @@ belongs_to :category
 :image, - string
 
 create models
-not using views for api
+not using views for api so use resources
 rails g resource "model" attritbue:datatype 
 --no-test-framework
 
 create relationships with models
 add validations
+validates_inclusion_of :user, :in => ['user', 'client']
+
+rails db:migrate
+rails db:seed
+
+work on controllers
+best practice to create
+mkdir api mkdir v1
+use namespacing
+fetch(http:..localhost:3000/api/v1/categories)
+
+routes
+namespace routes.rb to match directories 
+add inheritance in controllers using Api::V1::controller
+
+add gem 'rack-cors' 
+cross-origin-response
+allows to make requests
+need to uncomment in Gemfile and in config/intializers/cors.rb
+put '*' in example in origins or can specify localhost
+
+rails s -p 3000 to change port

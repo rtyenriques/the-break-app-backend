@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+category = Category.create(:name => "Events")
+
+article = Article.create(:category_id => 1, :title => "new event", :body => "event description", :publish_date => Date.today)
+
+
+
