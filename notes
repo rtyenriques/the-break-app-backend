@@ -1,0 +1,21 @@
+Category
+has_many :articles
+:name - string
+
+Article
+belongs_to :category
+:category_id - integer
+:title - string,
+:body, - string
+:subtitle, -string
+:author - string
+:publish_date, -datetime
+:image, - string
+
+create models
+not using views for api
+rails g resource "model" attritbue:datatype 
+--no-test-framework
+
+create relationships with models
+add validations
