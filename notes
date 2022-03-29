@@ -1,4 +1,4 @@
-Category
+ Category
 has_many :articles
 :name - string
 
@@ -40,4 +40,14 @@ allows to make requests
 need to uncomment in Gemfile and in config/intializers/cors.rb
 put '*' in example in origins or can specify localhost
 
+deleting db
+rails db:drop, then recreate db and migrate 
+or
+model.destroy_all but wont clear db
+
 rails s -p 3000 to change port
+
+work on instance methods for logic in models 
+
+work on controllers
+create crud methods and strong params
