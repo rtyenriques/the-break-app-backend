@@ -12,6 +12,7 @@ class Api::V1::CategoriesController < ApplicationController
             render json: @category
         else
             render json: {error: 'Error creating category'}
+        end
 
     end
 

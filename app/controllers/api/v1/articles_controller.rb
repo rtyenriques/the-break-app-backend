@@ -4,24 +4,26 @@ class Api::V1::ArticlesController < ApplicationController
     
 
     def index
-        @articles = Article.all
+        @articles = @category.articles
         render json: @articles
 
     end
 
-    def create
-        @category = Category.new(category_params)
-        if @category.save
-            render json: @category
-        else
-            render json: {error: 'Error creating category'}
+    def show
+    #    @articles = @category.article.find_by(id: params[:id])
+
+       @article - Article.find(params[:id])
+       render json: @articles
 
     end
 
-    def show
-        @article = Article.find(params[:id])
-        render json: @article
-
+    def create
+        @article = @category.articles.new(article_params)
+        if @article.save
+            render json: @article
+        else
+            render json: {error: 'Error creating article'}
+        end
     end
 
     def destroy
@@ -37,6 +39,7 @@ class Api::V1::ArticlesController < ApplicationController
     end
 
     def set_category
-        @category = Category.find(params[:id])
+        @category = Category.find(params[:category_id])
     end
 end
+
