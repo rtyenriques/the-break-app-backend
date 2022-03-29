@@ -11,4 +11,3 @@ category = Category.create(:name => "Events")
 article = Article.create(:category_id => 1, :title => "new event", :body => "event description", :publish_date => Date.today)
 
 
-

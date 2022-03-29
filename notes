@@ -51,3 +51,22 @@ work on instance methods for logic in models
 
 work on controllers
 create crud methods and strong params
+
+work on serializer to send over specific info
+
+frontend
+-check if api is working by using fetch get requests
+componentDidMount(){
+    fetch('http://localhost:3000/api/v1/categories', {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => console.log(data ))
+  }
+
+  need to set up serializer so we can chain along response data
+  ex. console.log(data[0].articles)
+  add to gemfile gem 'active_model_serializers'
+  rails g serializer model #do each seperately
+  it creates serialzer directory and we can add attributes we want to access
+  then add in relationships 
