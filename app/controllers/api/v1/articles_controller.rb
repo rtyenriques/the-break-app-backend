@@ -20,7 +20,7 @@ class Api::V1::ArticlesController < ApplicationController
     def create
         @article = @category.articles.new(article_params)
         if @article.save
-            render json: @article
+            render json: @category
         else
             render json: {error: 'Error creating article'}
         end
