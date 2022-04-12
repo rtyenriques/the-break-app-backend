@@ -272,4 +272,7 @@ set up like we setup category
 pass in props through container so article can have access 
 need to add in a check  before mapping over props articles beacuse it needs to know about props.articles && 
 
+add article
+delete article 
+using action and reducer 
 

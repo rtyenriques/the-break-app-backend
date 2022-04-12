@@ -23,9 +23,19 @@ class Api::V1::CategoriesController < ApplicationController
 
     end
 
+    def update
+        
+        @category = Category.find(params[:id])
+        @category.update(name: params["category"]["name"])
+        @category.save
+        render json: @category
+    end
+
     def destroy
+        @categories = Category.all
         @category = Category.find(params[:id])
         @category.destroy
+        render json: @categories
     end
 
     private
